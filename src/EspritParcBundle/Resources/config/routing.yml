@@ -1,0 +1,61 @@
+esprit_parc_homepage:
+    path:     /
+    defaults: { _controller: EspritParcBundle:Default:index }
+
+afficher:
+    path:     /afficher
+    defaults: { _controller: EspritParcBundle:Voiture:afficher }
+
+home:
+        path:     /home
+        defaults: { _controller: EspritParcBundle:Voiture:home }
+
+home_two:
+    path:     /homet/{marque}
+    defaults: { _controller: EspritParcBundle:Voiture:homet }
+
+indextable:
+        path:     /table
+        defaults: { _controller: EspritParcBundle:Voiture:indextable}
+
+create:
+    path:     /create
+    defaults: { _controller: EspritParcBundle:Modele:create }
+
+read:
+    path:     /read/
+    defaults: { _controller: EspritParcBundle:Modele:read }
+
+update:
+    path:     /update/{id}
+    defaults: { _controller: EspritParcBundle:Modele:update }
+
+delete:
+    path:     /delete/{id}
+    defaults: { _controller: EspritParcBundle:Modele:delete }
+
+recherche:
+    path:     /recherche/
+    defaults: { _controller: EspritParcBundle:Modele:recherche }
+
+readv:
+    path:     /readv/
+    defaults: { _controller: EspritParcBundle:VoitureCRUD:read }
+
+createv:
+    path:     /createv/
+    defaults: { _controller: EspritParcBundle:VoitureCRUD:create }
+
+updatev:
+  path:     /updatev/{ref}
+  defaults: { _controller: EspritParcBundle:VoitureCRUD:update }
+
+deletev:
+  path:     /deletev/{ref}
+  defaults: { _controller: EspritParcBundle:VoitureCRUD:delete }
+recherchev:
+    path:     /recherchev/
+    defaults: { _controller: EspritParcBundle:VoitureCRUD:recherche }
+searchajaxParameterVoiture:
+  path:     /searchajaxParameterVoiture/
+  defaults: { _controller: EspritParcBundle:VoitureCRUD:trouver }

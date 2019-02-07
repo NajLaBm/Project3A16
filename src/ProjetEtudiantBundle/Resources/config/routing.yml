@@ -1,0 +1,14 @@
+projet_etudiant_homepage:
+    path:     /
+    defaults: { _controller: ProjetEtudiantBundle:Default:index }
+readp:
+    path:     /readp/
+    defaults: { _controller: ProjetEtudiantBundle:Default:read }
+
+deletep:
+    path:     /deletep/{id}
+    defaults: { _controller: ProjetEtudiantBundle:Default:delete }
+
+addp:
+    path:     /addp/{id}
+    defaults: { _controller: ProjetEtudiantBundle:Default:add }

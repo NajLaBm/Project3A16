@@ -1,0 +1,27 @@
+<center>
+    <h3>Liste des enseignants</h3>
+    <table border="2">
+        <tr><td>reference</td>
+            <td>Serie</td>
+            <td>Date</td>
+            <td>Modele</td>
+
+            <td>Action</td>
+
+        </tr>
+        {% for voiture in voitures %}
+            <tr>
+                <td>
+                    {{ voiture.ref }} </td>
+                <td>  {{ voiture.serie }} </td>
+                <td> {{ voiture.datemc|date }} </td>
+                <td> {{ voiture.modele.lib }} </td>
+
+                <td> <a href ="{{ path('updatev',{'ref': voiture.ref}) }}">Update</a> </td>
+                <td> <a href ="{{ path('deletev',{'ref': voiture.ref}) }}">Delete</a> </td>
+            </tr>
+
+
+        {% endfor %}
+    </table>
+</center>

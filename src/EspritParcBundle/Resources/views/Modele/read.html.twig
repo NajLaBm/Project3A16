@@ -1,0 +1,22 @@
+<center>
+    <table border="2">
+      <tr><td>id</td>
+        <td>libelle</td>
+        <td>pays</td>
+          <td>Action</td>
+
+        </tr>
+        {% for modele in modeles %}
+        <tr>
+            <td>
+                    {{ modele.id }} </td>
+            <td>  {{ modele.lib }} </td>
+            <td> {{ modele.pays }} </td>
+            <td> <a href ="{{ path('update',{'id': modele.id}) }}">Modifier</a> </td>
+            <td> <a href ="{{ path('delete',{'id': modele.id}) }}">Delete</a> </td>
+        </tr>
+
+
+{% endfor %}
+    </table>
+</center>

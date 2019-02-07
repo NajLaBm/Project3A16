@@ -1,0 +1,45 @@
+<center>
+<form>
+ ID:   <input type="text" name="serie" id="cle">
+</form>
+</center>
+<table id="t" border="3">
+    <tr>
+        <td>id</td>
+        <td>Serie</td>
+        <td>Model</td>
+    </tr>
+
+</table>
+
+<script src="{{ asset("js/jquery-3.2.1.min.js") }}"></script>
+
+
+<script>
+
+    $('#cle').keypress(
+
+        function () {
+            var input = $('cle').val();
+            $.ajax(
+                {
+                    url:"{{ path('searchajaxParameterVoiture') }}",
+                    type: "POST",
+                    data:{'serie':input},
+                    success:function (data) {
+                        console.log(data);
+                        $.each(data,function (i,ele) {
+                            $('#t').append(
+                                "<tr>"+"<td>"+ele.id+"</td>"+
+                            "<tr>"+"<td>"+ele.serie+"</td>"+
+                            "<tr>"+"<td>"+ele.lib+"</td>"+"</tr>"
+                            );
+                        })
+                    }
+
+                }
+            )
+        }
+    )
+
+</script>

@@ -1,0 +1,78 @@
+<html>
+<head>
+</head>
+<body>
+
+
+<center>
+    <h1> liste des voitures </h1> <br>
+    <h4 id="txt">logo de voiture</h4>
+    <img src="{{ asset('img/car.jpg') }}" hidden >
+<table border="2">
+
+{% for v in voitures %}
+    <tr>
+        <td> {{ v.id }} </td>
+        <td> {{ v.marque }} </td>
+        <td> {{ v.serie}} </td>
+        <td ><a href="{{ path("home_two",{"marque":v.marque})}}" > Afficher </a></td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+<button id="btn"> hide </button>
+    <button id="btn1"> show </button>
+    <button id="btn2"> toggle </button>
+    <button id="vider"> vider </button>
+    <button id="supprimer"> supprimer </button>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script>
+        //alert pour verifier l'integration de js
+        // $(document).ready(function(){
+        //     alert("Script working properly");
+        // });
+
+    $('#btn').click(
+        function (){$('table').hide();}
+    );
+
+    $('#btn1').click(
+        function (){$('table').show();}
+    );
+        $('#btn2').click(
+            function (){$('table').toggle();}
+        );
+
+        $('#txt').mouseenter(
+            function () {
+                $('img').show(5000);
+                $(this).css('color','red');
+                $(this).text('logo affiché');
+            });
+// question 5 leave
+//         $('#txt').mouseleave(
+//             function () {
+//                 $('img').hide(5000);
+//                 $(this).css('color','black').text('afficher logo voiture');
+//
+//             });
+
+            $('img').click(
+                function () {
+                    $(this).css('width','100px').css('heigth','100px').slideUp(5000).slideDown(5000);
+                }
+            );
+
+        $('#vider').click(
+            function (){$('td').empty();}
+        );
+
+        $('#supprimer').click(
+            function (){$('table').remove(); }
+        );
+
+</script>
+
+</center>
+</body>
+</html>
